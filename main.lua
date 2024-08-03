@@ -1,6 +1,4 @@
-local util = {}
-
-function util:egg(stringx) 
+local function egg(stringx) 
     local output = {}
     for i = 1, #stringx do
         local charCode = string.byte(stringx, i)
@@ -47,7 +45,7 @@ function main:Begin(PROPS)
 
     local ImGui = Instance.new("ScreenGui")
     local Window = Instance.new("Frame")
-    local WindowCorner = Instance.new("UICorner")
+    --local WindowCorner = Instance.new("UICorner")
     local WindowPanel = Instance.new("Frame")
     local WindowPanelIcon = Instance.new("ImageLabel")
     local MinimiseButton = Instance.new("TextButton")
@@ -65,7 +63,7 @@ function main:Begin(PROPS)
     local WindowElementsContainerLayout = Instance.new("UIListLayout")
     local AWindowSep = Instance.new("Frame")        
 
-    ImGui.Name = string.format("ImGui-%s", tostring(util:egg(tostring(game:GetService("Players").LocalPlayer.UserId))))
+    ImGui.Name = string.format("ImGui-%s", tostring(egg(tostring(game:GetService("Players").LocalPlayer.UserId))))
     ImGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
     ImGui.ResetOnSpawn = false
     SecureGui(ImGui)                                
@@ -80,9 +78,9 @@ function main:Begin(PROPS)
     Window.Selectable = true
     Window.Size = UDim2.new(0, MenuOptions.Width, 0, MenuOptions.Height)
 
-    WindowCorner.CornerRadius = UDim.new(0, 9)
-    WindowCorner.Name = "WindowCorner"
-    WindowCorner.Parent = Window
+    --WindowCorner.CornerRadius = UDim.new(0, 9)
+    --WindowCorner.Name = "WindowCorner"
+    --WindowCorner.Parent = Window
 
     WindowPanel.Name = "WindowPanel"
     WindowPanel.Parent = Window
